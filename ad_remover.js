@@ -97,23 +97,13 @@ function removeAds(idStart) {
     if (VERBOSE) {
       console.log("New ad(s) loaded");
     }
-    var prepend = "<div class=\"CITP_adBlockerCover\" style=\"height: 100%;position: absolute;width: 100%;background-color: rgba(255, 255, 255, 0.7);z-index: 100; visibility: visible;\">";
+    var prepend = "<div class=\"CITP_adBlockerCover\" style=\"height: 100%;position: absolute;width: 100%;background-color: rgba(255, 255, 255, 1);z-index: 100; visibility: visible;\">";
     prepend += "<div class=\"CITP_closeButton\" style=\"position: absolute; right: 5px; top: 5px; cursor: pointer; padding: 0px 3px; border: 1px solid black; border-radius: 5px;\">";
-    prepend += "<strong>";
-    prepend += "X";
-    prepend += "</strong>";
     prepend += "</div>";
     prepend += "<div style=\"width: 100%;text-align:center;\">";
     prepend += "<span style=\"color: black; font-size:60px;\">";
-    prepend += "THIS IS AN AD";
+    //prepend += "THIS IS AN AD";
     prepend += "</span>";
-    // if we have "Sponsored" text in another language, add it below "THIS IS AN AD"
-    if (NON_ENGLISH_LOCALE && matchingText !== "") {
-      prepend += "<br/>"
-      prepend += "<span style=\"color: black; font-size:40px; background: rgba(255,255,255,.8);\">";
-      prepend += "(" + matchingText + ")";
-      prepend += "</span>";
-    }
     prepend += "</div>";
     prepend += "</div>";
     adDivs.each(function (i) {
